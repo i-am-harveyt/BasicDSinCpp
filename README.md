@@ -7,19 +7,19 @@ Maybe one day I'll update the content in README, but I'll put more emphasis on w
 
 ### Currently uploaded
 
-[XORLinkedList](##xorll)
+[XORLinkedList](#xorll)
 
 ## Table of Content
 
-1. [Stack](##stack)
+1. [Stack](#stack)
 
 2. Queue
-    1. [Array](##queueinarray)
-    2. [Linked List](##queueinll)
+    1. [Array](#queueinarray)
+    2. [Linked List](#queueinll)
 
-3. [BinaryTree with Pre/In/Post-order traversal](##bttraversals)
+3. [BinaryTree with Pre/In/Post-order traversal](#bttraversals)
 
-4. [XOR Linked List](##xorll)
+4. [XOR Linked List](#xorll)
 
 
 <a name="stack"></a>
