@@ -37,14 +37,14 @@ public:
     // remove head
     void remove(void)
     {
-        Node *remove = this->head;
+        Node *removeNode = this->head;
         
         // new head is the previous(or in some perspective, next) of current head.
-        Node *newHead = (Node *)((uintptr_t)remove->pointer ^ (uintptr_t)NULL);
+        Node *newHead = (Node *)((uintptr_t)removeNode->pointer ^ (uintptr_t)NULL);
 
         // update the new head's pointer
-        newHead->pointer = (Node *)((uintptr_t)newHead->pointer ^ (uintptr_t)remove);
-        delete remove;
+        newHead->pointer = (Node *)((uintptr_t)newHead->pointer ^ (uintptr_t)removeNode);
+        delete removeNode;
 
         // update head
         this->head = newHead;
