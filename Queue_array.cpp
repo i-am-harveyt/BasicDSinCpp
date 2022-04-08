@@ -16,7 +16,7 @@ public:
         this->rear = 0;
         this->length = length + 1;
     }
-    void push(int item)
+    void enqueue(int item)
     {
         this->front = (this->front + 1) % this->length;
         if (this->front == this->rear)
@@ -27,7 +27,7 @@ public:
         }
         this->items[this->front] = item;
     }
-    int pop(void)
+    int dequeue(void)
     {
         if (this->rear >= this->front)
         {
@@ -49,16 +49,16 @@ public:
 int main(void)
 {
     Queue queue = Queue(5);
-    queue.push(5);
-    queue.push(4);
-    queue.push(3);
-    queue.push(2);
-    queue.push(1);
-    std::cout << queue.pop() << std::endl;
-    std::cout << queue.pop() << std::endl;
-    std::cout << queue.pop() << std::endl;
-    std::cout << queue.pop() << std::endl;
-    std::cout << queue.pop() << std::endl;
-    std::cout << queue.pop() << std::endl;
+    queue.enqueue(5);
+    queue.enqueue(4);
+    queue.enqueue(3);
+    queue.enqueue(2);
+    queue.enqueue(1);
+    std::cout << queue.dequeue() << std::endl;
+    std::cout << queue.dequeue() << std::endl;
+    std::cout << queue.dequeue() << std::endl;
+    std::cout << queue.dequeue() << std::endl;
+    std::cout << queue.dequeue() << std::endl;
+    std::cout << queue.dequeue() << std::endl;
     return 0;
 }
