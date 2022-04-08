@@ -7,42 +7,42 @@ Maybe one day I'll update the content in README, but I'll put more emphasis on w
 
 ### Currently uploaded
 
-[XORLinkedList](##XORLL)
+[XORLinkedList](##xorll)
 
 ## Table of Content
 
-1. [Stack](##Stack)
+1. [Stack](##stack)
 
 2. Queue
-    1. [Array](##QueueInArray)
-    2. [Linked List](##QueueInLL)
+    1. [Array](##queueinarray)
+    2. [Linked List](##queueinll)
 
-3. [BinaryTree with Pre/In/Post-order traversal](##BTTraversals)
+3. [BinaryTree with Pre/In/Post-order traversal](##bttraversals)
 
-4. [XOR Linked List](##XORLL)
+4. [XOR Linked List](##xorll)
 
 
-<a name="Stack"></a>
+<a name="stack"></a>
 ## Stack
 
 Implement Stack using Array. Also implemented push, pop, isEmpty, isFull functions.
 
-<a name="QueueInArray"></a>
+<a name="queueinarray"></a>
 ## Queue implemented by Array
 
 Implement Queue using Array. Also implemented enqueue and dequeue functions. The emptiness and fullness of queue will be notified when calling these functions.
 
-<a name="QueueInLL"></a>
+<a name="queueinll"></a>
 ## Queue implemented by Linked List
 
-The introduction is almost as same as [Queue implemented by Array](#QueueInArray)
+The introduction is almost as same as [Queue implemented by Array](#queueinarray)
 
-<a name="BTTraversals"></a>
+<a name="bttraversals"></a>
 ## BinaryTree with Pre/In/Post-order traversal
 
 Implement BT, using Linked List, and three traversals. The tree will be created automatically and \(maybe\) randomly.
 
-<a name="XORLL"></a>
+<a name="xorll"></a>
 ## XOR Linked List
 
 Implement XOR Linked List, I like this Data Structure persoanlly, 'cause I think this is a great use of XOR.
