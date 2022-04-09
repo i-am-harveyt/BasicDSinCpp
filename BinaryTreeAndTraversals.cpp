@@ -110,50 +110,51 @@ public:
             q.enqueue(newNode);
         }
     }
-    void preorder(Node *current)
-    {
-        if (current == NULL)
-            return;
-        std::cout << current->data << " ";
-        if (current->left)
-            preorder(current->left);
-        if (current->right)
-            preorder(current->right);
-    }
-    void inorder(Node *current)
-    {
-        if (current == NULL)
-            return;
-        if (current->left)
-            inorder(current->left);
-        std::cout << current->data << " ";
-        if (current->right)
-            inorder(current->right);
-    }
-    void postorder(Node *current)
-    {
-        if (current == NULL)
-            return;
-        if (current->left)
-            postorder(current->left);
-        if (current->right)
-            postorder(current->right);
-        std::cout << current->data << " ";
-    }
 };
+
+void preorder(Node *current)
+{
+    if (current == NULL)
+        return;
+    std::cout << current->data << " ";
+    if (current->left)
+        preorder(current->left);
+    if (current->right)
+        preorder(current->right);
+}
+void inorder(Node *current)
+{
+    if (current == NULL)
+        return;
+    if (current->left)
+        inorder(current->left);
+    std::cout << current->data << " ";
+    if (current->right)
+        inorder(current->right);
+}
+void postorder(Node *current)
+{
+    if (current == NULL)
+        return;
+    if (current->left)
+        postorder(current->left);
+    if (current->right)
+        postorder(current->right);
+    std::cout << current->data << " ";
+}
 
 int main(void)
 {
     Queue queue = Queue(20);
     BT tree = BT(queue);
     std::cout << "Preorder: ";
-    tree.preorder(tree.root);
+    preorder(tree.root);
     std::cout << std::endl;
     std::cout << "Inorder: ";
-    tree.inorder(tree.root);
+    inorder(tree.root);
     std::cout << std::endl;
     std::cout << "Postorder: ";
-    tree.postorder(tree.root);
+    postorder(tree.root);
     std::cout << std::endl;
 
     return 0;
