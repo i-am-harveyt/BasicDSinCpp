@@ -1,26 +1,35 @@
-# BasicDSinCpp
+# BasicDSinCpp\(and some algorithm\)
 
 ## Intro
-Basic Data Structure in C++, try to practice my C++ programming skill and implement those I've learned.
+
+Basic Data Structure and Algorithm in C++, try to practice my C++ programming skill and implement those I've learned.
 
 Maybe one day I'll update the content in README, but I'll put more emphasis on writing code instead.
 
-### Currently uploaded
+### Currently uploaded\(04/09 2022\)
 
-[XORLinkedList](#xorll)
+[Selection Sort](#ss)
 
 ## Table of Content
+
+### Data Structure
 
 1. [Stack](#stack)
 
 2. Queue
-    1. [Array](#queueinarray)
-    2. [Linked List](#queueinll)
+
+   1. [Array](#queueinarray)
+   2. [Linked List](#queueinll)
 
 3. [BinaryTree with Pre/In/Post-order traversal](#bttraversals)
 
 4. [XOR Linked List](#xorll)
 
+### Algorithm
+
+1. [Selection Sort](#ss)
+
+## Data Structure
 
 <a name="stack"></a>
 ## Stack
@@ -47,3 +56,11 @@ Implement BT, using Linked List, and three traversals. The tree will be created 
 
 Implement XOR Linked List, I like this Data Structure persoanlly, 'cause I think this is a great use of XOR.
 
+## Algorithm
+
+<a name="ss"></a>
+## Selection Sort
+
+The basic sorting algorithm, which (might be) the most intuitive one.
+
+The basic thought is that, in my humble opinion, find the smallest element in the sub-array and place in the front.
