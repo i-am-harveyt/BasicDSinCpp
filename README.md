@@ -50,7 +50,7 @@ The introduction is almost as same as [Queue implemented by Array](#queueinarray
 <a name="bttraversals"></a>
 ### BinaryTree with Pre/In/Post-order traversal
 
-Implement BT, using Linked List, and three traversals. The tree will be created automatically and \(maybe\) randomly.
+Implement BT, using Linked List, and three traversals. The tree will be created automatically and \(maybe\) numarical randomly.
 
 <a name="xorll"></a>
 ### XOR Linked List
