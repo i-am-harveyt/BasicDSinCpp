@@ -28,6 +28,7 @@ Maybe one day I'll update the content in README, but I'll put more emphasis on w
 ### [Algorithm](#ag)
 
 1. [Selection Sort](#ss)
+2. [Bubble Sort](#bs)
 
 <a name="ds"></a>
 ## Data Structure
