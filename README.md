@@ -6,9 +6,9 @@ Basic Data Structure and Algorithm in C++, try to practice my C++ programming sk
 
 Maybe one day I'll update the content in README, but I'll put more emphasis on writing code instead.
 
-### Currently uploaded\(04/09 2022\)
+### Currently uploaded\(04/10 2022\)
 
-[Selection Sort](#ss)
+[Bubble Sort](#bs)
 
 ## Table of Content
 
@@ -66,3 +66,10 @@ Implement XOR Linked List, I like this Data Structure persoanlly, 'cause I think
 The basic sorting algorithm, which (might be) the most intuitive one.
 
 The basic thought is that, in my humble opinion, find the smallest element in the sub-array and place in the front.
+
+<a name="bs"></a>
+### Bubble Sort
+
+Another basic algorithm, while I  personally think it is not as intuitive as [Selection Sort](#ss).
+
+The thought is that, if there are two nearby elements are not sorted, then swap them. Repeatedly check all elements in the array until make sure they're all sorted.
