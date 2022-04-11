@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #define LENGTH 100
 
 
@@ -6,13 +7,16 @@ class Stack{
 private: 
     int topIndex;
     int length;
-    int* items;
+    // int* items;
+    std::vector<int> items;
 
 public:
     Stack(int length){
         this->topIndex = 0;
         this->length = length;
-        this->items = new int[length];
+        // this->items = new int[length];
+        std::vector<int> vect(20);
+        this->items = vect;
     }
     bool isEmpty(void);
     bool isFull(void);
