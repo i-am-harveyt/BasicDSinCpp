@@ -1,4 +1,4 @@
-# Basic Data Structure in Cpp\(and some algorithm\)
+# Basic Data Structure in Cpp\(and some Algorithms\)
 
 ## Intro
 
@@ -8,9 +8,7 @@ Maybe one day I'll update the content in README, but I'll put more emphasis on w
 
 ### Currently uploaded\(04/10 2022\)
 
-[Bubble Sort](#bubble_sort)
-
-[Binary Tree Sort](#binary_tree_sort)
+[Doubly Linked List](#doubly_linked_list)
 
 ## Table of Content
 
@@ -26,6 +24,8 @@ Maybe one day I'll update the content in README, but I'll put more emphasis on w
 3. [BinaryTree with Pre/In/Post-order traversal](#binary_tree_traversal)
 
 4. [XOR Linked List](#xor_linked_list)
+
+5. [Doubly Linked List](#doubly_linked_list)
 
 ### [Algorithm](#ag)
 
@@ -60,6 +60,11 @@ Implement BT, using Linked List, and three traversals. The tree will be created 
 ### XOR Linked List
 
 Implement XOR Linked List, I like this Data Structure persoanlly, 'cause I think this is a great use of XOR.
+
+<a name="doubly_linked_list"></a>
+### Doubly Linked List
+
+Implement Doubly Linked List, use two pionter to save the address of previous and next Node.
 
 <a name="ag"></a>
 ## Algorithm
