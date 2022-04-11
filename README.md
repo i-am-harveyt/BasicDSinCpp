@@ -1,4 +1,4 @@
-# Basicdata_structureinCpp\(and some algorithm\)
+# Basic Data Structure in Cpp\(and some algorithm\)
 
 ## Intro
 
