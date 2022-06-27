@@ -79,6 +79,8 @@ Heap is a type of Complete Binary Tree, and it maintains it structure if we prop
 
 Add and deleteMax function's time complexity are both $O(logN)$, N = size of data, $logN$ is it's height. Due to it's complete Binary Tree property.
 
+06/27/2022 Update: I found that I accidentally print the null node at all() function, and I fixed it.
+
 <a name="ag"></a>
 ## Algorithm
 
@@ -101,7 +103,7 @@ The thought is that, if there are two nearby elements, are not sorted, then swap
 
 Also quite basic one, in my opinion.
 
-The thought is that, we can use a rule to create a binary tree first \-\- put smaller things left and larger things right. 
+The thought is that, we can use a rule to create a Binary Search Tree first \-\- put smaller things left and larger things right. 
 
 After that, we just use a in-order traversal run through them, and we'll get a sorted sequence.
 

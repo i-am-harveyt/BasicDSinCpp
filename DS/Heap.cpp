@@ -16,7 +16,7 @@ public:
     // print out all data in heap
     void all(void)
     {
-        for (int i = 0; i < data.size(); i++)
+        for (int i = 1; i < data.size(); i++)
             std::cout << data[i] << " ";
         std::cout << std::endl;
     }
@@ -116,7 +116,10 @@ int main(void)
     heap.add(15);
     heap.add(30);
 
+    std::cout << "Before Delete: ";
     heap.all();
+
+    std::cout << "Maximum: " << heap.findMax() << std::endl;
 
     heap.deleteMax();
     heap.deleteMax();
@@ -127,6 +130,8 @@ int main(void)
     heap.deleteMax();
     heap.deleteMax();
     heap.deleteMax();
+
+    std::cout << "After Delete: ";
     heap.all();
 
     return 0;
