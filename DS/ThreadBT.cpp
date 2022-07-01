@@ -83,7 +83,7 @@ public:
 class ThreadBT {
 public:
   TNode *head;
-  ThreadBT() { head = new TNode(0); }
+  ThreadBT() { head = new TNode(-9999); }
 
   TNode *insuc(TNode *x) {
     TNode *temp = x->right;
@@ -129,7 +129,6 @@ public:
     std::vector<TNode *> stt;
     Node *cur = tree.root, *next;
     TNode *curT = new TNode(cur->value), *nextT;
-    std::cout << curT->value << std::endl;
     head->leftNull = false;
     head->left = curT;
 
@@ -141,6 +140,7 @@ public:
         cur = cur->left;
         if (cur) {
           curT->left = new TNode(cur->value);
+          curT->leftNull = false;
           curT = curT->left;
         }
       }
@@ -153,17 +153,16 @@ public:
       cur = cur->right;
       if (cur) {
         curT->right = new TNode(cur->value);
+        curT->rightNull = false;
         curT = curT->right;
       }
     }
-    std::cout << "";
   }
 
   void linking() {
     std::vector<TNode *> st;
     std::vector<TNode *> order;
     TNode *cur = head->left;
-    st.push_back(cur);
 
     // in order
     while (!st.empty() || cur) {
@@ -180,10 +179,11 @@ public:
     }
 
     // link all in order
-    TNode *headNode = order.front(), *tailNode = order.back();
+    TNode *headNode = order[0], *tailNode = order[order.size() - 1];
     headNode->left = head;
     tailNode->right = head;
     int size = order.size();
+
     for (int i = 1; i < size - 1; i++) {
       if (order[i]->leftNull)
         order[i]->left = order[i - 1];
