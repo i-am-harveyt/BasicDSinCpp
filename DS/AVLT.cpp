@@ -75,7 +75,6 @@ public:
     order.push_back(dummy);
     Node *cur = dummy->left; // i.e. root
 
-    std::cout << "Find: " << val << std::endl;
     // find target, and record the path
     while (cur != nil) {
       order.push_back(cur);
@@ -86,26 +85,19 @@ public:
       else
         break;
     }
-    // if the node is not in theis tree, do nothing
+    // if the node is not in this tree, do nothing
     if (cur == nil)
       return;
 
-    std::cout << "Del: " << val << std::endl;
     // delete as BST
     Node *del = order.back(); // this is target
-    order.pop_back(); // remove from order, and add the replacement in
+    order.pop_back(); // remove from order, and add the replacement in later
     Node *preDel = order.back(); // the parent of target
 
     if (del->left != nil) { // take the largest from left subtree
       Node *largest = del->left;
-      if (largest->right == nil) {
-        if (del == preDel->left)
-          preDel->left = largest;
-        else
-          preDel->right = largest;
-
-      } else {
-        // if there is node has bigger value than root of left subtree
+      if (largest->right !=
+          nil) { // if there is node has bigger value than root of left subtree
         Node *preLarge;
         while (largest->right != nil) {
           preLarge = largest;
@@ -114,17 +106,18 @@ public:
         preLarge->right = largest->left;
       }
       order.push_back(largest);
+      if (largest != del->left)
+        largest->left = del->left;
+      largest->right = del->right;
+      if (del == preDel->left)
+        preDel->left = largest;
+      else
+        preDel->right = largest;
 
     } else if (del->right != nil) { // take the smallest from right subtree
       Node *smallest = del->right;
-      if (smallest->left == nil) {
-        if (del == preDel->left)
-          preDel->left = smallest;
-        else
-          preDel->right = smallest;
-        
-      } else {
-        // if there is node has bigger value than root of right subtree
+      if (smallest->left != nil) {
+        // if there is node has smaller value than root of right subtree
         Node *preSmall;
         while (smallest->left != nil) {
           preSmall = smallest;
@@ -134,6 +127,14 @@ public:
         preSmall->left = smallest->right;
       }
       order.push_back(smallest);
+      smallest->left = del->left;
+      if (smallest != del->right)
+        smallest->right = del->right;
+      if (del == preDel->left)
+        preDel->left = smallest;
+      else
+        preDel->right = smallest;
+
     } else { // if del has no subtree
       if (del == preDel->left)
         preDel->left = nil;
@@ -142,9 +143,10 @@ public:
     }
     delete del;
 
-    std::cout << "Fix: " << val << std::endl;
     // fix those in 'order'
     fix(order);
+
+    std::cout << "Fix Complete" << std::endl;
   }
 
   // find if value in the AVLT or not
