@@ -22,7 +22,6 @@ public:
     dummy = new Node(-1, nil);
   }
   void insert(int val) {
-    std::cout << "Insert: " << val << std::endl;
     // if there is no node in tree
     if (size == 0) {
       dummy->left = new Node(val, nil);
@@ -71,10 +70,13 @@ public:
 
   // Delete Node, delete as BST, then adjust those in finding path
   void deleteNode(int val) {
+    std::cout << "Delete: " << val << std::endl;
     std::vector<Node *> order;
     order.push_back(dummy);
-    Node *cur = dummy->left;
+    Node *cur = dummy->left; // i.e. root
 
+    std::cout << "Find: " << val << std::endl;
+    // find target, and record the path
     while (cur != nil) {
       order.push_back(cur);
       if (val < cur->value)
@@ -84,24 +86,26 @@ public:
       else
         break;
     }
+    // if the node is not in theis tree, do nothing
     if (cur == nil)
       return;
 
+    std::cout << "Del: " << val << std::endl;
     // delete as BST
-    Node *del = order.back();
-    order.pop_back();
-    Node *preDel = order.back();
-    if (del->left != nil) {
-      // take the largest node to replace
-      Node *largest;
-      largest = del->left;
+    Node *del = order.back(); // this is target
+    order.pop_back(); // remove from order, and add the replacement in
+    Node *preDel = order.back(); // the parent of target
+
+    if (del->left != nil) { // take the largest from left subtree
+      Node *largest = del->left;
       if (largest->right == nil) {
         if (del == preDel->left)
           preDel->left = largest;
         else
           preDel->right = largest;
+
       } else {
-        // if there is node has bigger value than root of left stubtree
+        // if there is node has bigger value than root of left subtree
         Node *preLarge;
         while (largest->right != nil) {
           preLarge = largest;
@@ -110,15 +114,15 @@ public:
         preLarge->right = largest->left;
       }
       order.push_back(largest);
-    } else {
-      // take smallest node to replace
-      Node *smallest;
-      smallest = del->right;
+
+    } else if (del->right != nil) { // take the smallest from right subtree
+      Node *smallest = del->right;
       if (smallest->left == nil) {
         if (del == preDel->left)
           preDel->left = smallest;
         else
           preDel->right = smallest;
+        
       } else {
         // if there is node has bigger value than root of right subtree
         Node *preSmall;
@@ -126,12 +130,19 @@ public:
           preSmall = smallest;
           smallest = smallest->left;
         }
+
         preSmall->left = smallest->right;
       }
       order.push_back(smallest);
+    } else { // if del has no subtree
+      if (del == preDel->left)
+        preDel->left = nil;
+      else
+        preDel->right = nil;
     }
     delete del;
 
+    std::cout << "Fix: " << val << std::endl;
     // fix those in 'order'
     fix(order);
   }
@@ -188,6 +199,7 @@ public:
           rr(a, b, b->right, p);
       }
     }
+    std::cout << "Fixed" << std::endl;
   }
 
   void ll(Node *a, Node *b, Node *c, Node *p) {
@@ -275,16 +287,32 @@ public:
 int main(void) {
   AVLT avlt = AVLT();
   std::vector<int> seq;
-  seq.push_back(40);
+  /* seq.push_back(40);
   seq.push_back(20);
   seq.push_back(10);
   seq.push_back(25);
   seq.push_back(30);
   seq.push_back(22);
-  seq.push_back(50);
+  seq.push_back(50); */
+  seq.push_back(14);
+  seq.push_back(17);
+  seq.push_back(11);
+  seq.push_back(7);
+  seq.push_back(53);
+  seq.push_back(4);
+  seq.push_back(13);
+  seq.push_back(12);
+  seq.push_back(8);
+  seq.push_back(60);
+  seq.push_back(19);
+  seq.push_back(16);
+  seq.push_back(20);
   for (int i = 0; i < seq.size(); i++) {
     avlt.insert(seq[i]);
   }
+  avlt.deleteNode(8);
+  avlt.deleteNode(7);
+  avlt.deleteNode(11);
   avlt.all();
   avlt.preorder();
   return 0;
