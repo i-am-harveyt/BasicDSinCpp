@@ -71,22 +71,69 @@ public:
 
   // Delete Node, delete as BST, then adjust those in finding path
   void deleteNode(int val) {
-    std::vector <Node *> order;
+    std::vector<Node *> order;
     order.push_back(dummy);
     Node *cur = dummy->left;
 
     while (cur != nil) {
-        order.push_back(cur);
-        if (val < cur->value)
-          cur = cur->left;
-        else if (val > cur->value)
-          cur = cur->right;
-        else
-          break;
+      order.push_back(cur);
+      if (val < cur->value)
+        cur = cur->left;
+      else if (val > cur->value)
+        cur = cur->right;
+      else
+        break;
     }
-    if (cur == nil) return;
+    if (cur == nil)
+      return;
 
-    cur = stack.back();
+    // delete as BST
+    Node *del = order.back();
+    order.pop_back();
+    Node *preDel = order.back();
+    if (del->left != nil) {
+      // take the largest node to replace
+      Node *largest;
+      largest = del->left;
+      if (largest->right == nil) {
+        if (del == preDel->left)
+          preDel->left = largest;
+        else
+          preDel->right = largest;
+      } else {
+        // if there is node has bigger value than root of left stubtree
+        Node *preLarge;
+        while (largest->right != nil) {
+          preLarge = largest;
+          largest = largest->right;
+        }
+        preLarge->right = largest->left;
+      }
+      order.push_back(largest);
+    } else {
+      // take smallest node to replace
+      Node *smallest;
+      smallest = del->right;
+      if (smallest->left == nil) {
+        if (del == preDel->left)
+          preDel->left = smallest;
+        else
+          preDel->right = smallest;
+      } else {
+        // if there is node has bigger value than root of right subtree
+        Node *preSmall;
+        while (smallest->left != nil) {
+          preSmall = smallest;
+          smallest = smallest->left;
+        }
+        preSmall->left = smallest->right;
+      }
+      order.push_back(smallest);
+    }
+    delete del;
+
+    // fix those in 'order'
+    fix(order);
   }
 
   // find if value in the AVLT or not
