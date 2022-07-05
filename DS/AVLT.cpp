@@ -69,9 +69,29 @@ public:
     size++;
   }
 
+  // Delete Node, delete as BST, then adjust those in finding path
+  void deleteNode(int val) {
+    std::vector <Node *> order;
+    order.push_back(dummy);
+    Node *cur = dummy->left;
+
+    while (cur != nil) {
+        order.push_back(cur);
+        if (val < cur->value)
+          cur = cur->left;
+        else if (val > cur->value)
+          cur = cur->right;
+        else
+          break;
+    }
+    if (cur == nil) return;
+
+    cur = stack.back();
+  }
+
+  // find if value in the AVLT or not
   Node *find(int val) {
 
-    // find if value in the AVLT or not
     Node *cur = dummy->left;
     while (cur->value != val) {
       if (cur == nil)
@@ -93,6 +113,7 @@ public:
       cur->height = rightH + 1;
   }
 
+  // trace order and check imbalance condition
   void fix(std::vector<Node *> &order) {
     // update height
     int index = order.size() - 1;
@@ -163,6 +184,7 @@ public:
     rr(a, c, b, p);
   }
 
+  // In-order traversal
   void all() {
 
     std::cout << "All : ";
@@ -184,6 +206,7 @@ public:
     std::cout << std::endl;
   }
 
+  // Pre-order traversal
   void preorder() {
     std::cout << "Preorder: ";
     Node *cur = dummy->left;
