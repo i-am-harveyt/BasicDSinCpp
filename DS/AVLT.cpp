@@ -106,7 +106,7 @@ public:
         preLarge->right = largest->left;
       }
       order.push_back(largest);
-      if (largest != del->left)
+      if (largest != del->left) // prevent from recursive condition
         largest->left = del->left;
       largest->right = del->right;
       if (del == preDel->left)
@@ -123,12 +123,11 @@ public:
           preSmall = smallest;
           smallest = smallest->left;
         }
-
         preSmall->left = smallest->right;
       }
       order.push_back(smallest);
       smallest->left = del->left;
-      if (smallest != del->right)
+      if (smallest != del->right) // prevent from recursive condition
         smallest->right = del->right;
       if (del == preDel->left)
         preDel->left = smallest;
@@ -186,14 +185,14 @@ public:
     for (int i = index; i > 0; i--) {
       lh = order[i]->left->height, rh = order[i]->right->height;
       if (lh - rh > 1) { // left sub-tree is higher
-        a = order[i], b = order[i + 1], p = order[i - 1];
+        a = order[i], b = order[i]->left, p = order[i - 1];
         lh = b->left->height, rh = b->right->height;
         if (lh > rh) // ll condiion
           ll(a, b, b->left, p);
         else // lr condition
           lr(a, b, b->right, p);
       } else if (lh - rh < -1) { // right subtree is higher
-        a = order[i], b = order[i + 1], p = order[i - 1];
+        a = order[i], b = order[i]->right, p = order[i - 1];
         lh = b->left->height, rh = b->right->height;
         if (lh > rh) // rl condition
           rl(a, b, b->left, p);
