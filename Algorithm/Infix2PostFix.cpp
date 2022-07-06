@@ -8,8 +8,10 @@ int priority(char chr) {
     return 1;
   else if (chr == '*' || chr == '/')
     return 2;
-  else if (chr == '(')
+  else if (chr == '^')
     return 3;
+  else if (chr == '(')
+    return 4;
   return -1;
 }
 
@@ -25,6 +27,7 @@ void Infix2PostFix(std::string str) {
   charset.insert('-');
   charset.insert('*');
   charset.insert('/');
+  charset.insert('^');
 
   while (index < (int)str.size()) {
     // std::cout << str[index] << std::endl;
@@ -54,6 +57,6 @@ void Infix2PostFix(std::string str) {
 }
 
 int main(void) {
-  Infix2PostFix("a+b*c");
+  Infix2PostFix("a+b*c-d^e/f");
   return 0;
 }
