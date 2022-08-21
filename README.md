@@ -1,4 +1,4 @@
-# Basic Data Structure in Cpp\(and some Algorithms\)
+# Basic Data Structure and some Algorithms in CPP
 
 ## Intro
 
@@ -10,7 +10,7 @@ Maybe one day I'll update the content in README, but I'll put more emphasis on w
 
 Update Thread Binary Tree part, but not complete yet.
 
-[Maximum-Heap](#maximum_heap)
+[Thread Binary Tree](#thread_binary_tree)
 
 ## Table of Content
 
@@ -83,8 +83,6 @@ Heap is a type of Complete Binary Tree, and it maintains it structure if we prop
 
 Add and deleteMax function's time complexity are both $O(logN)$, N = size of data, $logN$ is it's height. Due to it's complete Binary Tree property.
 
-06/27/2022 Update: I found that I accidentally print the null node at all() function, and I fixed it.
-
 <a name="thread_binary_tree"></a>
 ### Thread Binary Tree
 
@@ -99,9 +97,9 @@ This is why Thread Binary Tree comes.
 #### Structure
 
 ```
-+---+
-|   |
-+---+
++-------------------------------------------------------+
+| leftptr | leftIsNull | value | rightIsNull | rightptr |
++-------------------------------------------------------+
 ```
 
 We use two tags to present if the pointer is a null pointer.
@@ -112,9 +110,11 @@ Otherwise, the right pointer points to the inorder successor, i.e. in inorder li
 
 Whereas the left pointer points to the inorder predecessor, i.e. in inorder list, the previous one.
 
-The "head" and "tail" will points to null node, which means the "realy" null pointer. 
+The "head" and "tail" will points to null node, which means the "really" null pointer. 
 
 In this way, we only waste two pointer as nullptr instead of n+1.
+
+However, I found I didn't implement well, I'll rewrite this in couple days, I hope so.
 
 <a name="avl-tree"></a>
 ### AVL Tree

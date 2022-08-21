@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+// TreeNode Stuucture
 class Node {
 public:
   int value;
@@ -11,16 +12,20 @@ public:
   }
 };
 
+// binary search tree
 class BST {
 public:
   Node *root;
-  int numOfNodes;
+  int numOfNodes; // size
   int size(void) { return numOfNodes; }
 
+  // constructer
   BST(void) {
     root = nullptr;
     numOfNodes = 0;
   }
+
+  // tree init
   void genNewTree(std::vector<int> &nums) {
     int i = 1;
     numOfNodes = nums.size();
@@ -49,10 +54,12 @@ public:
       }
     }
   }
+
+  // print all nodes' value
   void all(void) {
     Node *cur = root;
     std::vector<Node *> stack;
-    while (stack.size() || cur) {
+    while (stack.size() || cur) { // iterative dfs method
       while (cur) {
         stack.push_back(cur);
         cur = cur->left;
@@ -68,6 +75,7 @@ public:
   }
 };
 
+// Thread Binary tree node structure
 class TNode {
 public:
   int value;
@@ -80,11 +88,13 @@ public:
   }
 };
 
+// Thread Binary Tree
 class ThreadBT {
 public:
   TNode *head;
-  ThreadBT() { head = new TNode(-9999); }
+  ThreadBT() { head = new TNode(-9999); } // head node init
 
+  // find inorder successor
   TNode *insuc(TNode *x) {
     TNode *temp = x->right;
     if (!x->rightNull)
@@ -92,6 +102,7 @@ public:
         temp = temp->left;
     return temp;
   }
+  // find inorder predecessor
   TNode *inpre(TNode *x) {
     TNode *temp = x->left;
     if (!x->leftNull)
@@ -99,13 +110,16 @@ public:
         temp = temp->right;
     return temp;
   }
+
+  // insert node
   void insertRight(TNode *node, TNode *newNode) {
     newNode->right = node->right;
     newNode->rightNull = node->rightNull;
-    newNode->left = node->left;
-    newNode->leftNull = node->leftNull;
+    newNode->left = node;
+    newNode->leftNull = true;
     node->rightNull = false;
     node->right = newNode;
+    // update successor's leftptr
     if (!newNode->rightNull) {
       TNode *temp = insuc(newNode);
       temp->left = newNode;
@@ -114,16 +128,18 @@ public:
   void insertLeft(TNode *node, TNode *newNode) {
     newNode->left = node->left;
     newNode->leftNull = node->leftNull;
-    newNode->right = node->right;
-    newNode->rightNull = node->rightNull;
+    newNode->right = node;
+    newNode->rightNull = true;
     node->leftNull = false;
     node->left = newNode;
+    // update predecessor's right ptr
     if (!newNode->leftNull) {
       TNode *temp = inpre(newNode);
       temp->right = newNode;
     }
   }
 
+  // copy a binary search tree and turn into thread bt
   void copyBST(BST tree) {
     std::vector<Node *> st;
     std::vector<TNode *> stt;
@@ -159,6 +175,7 @@ public:
     }
   }
 
+  // tackle on links
   void linking() {
     std::vector<TNode *> st;
     std::vector<TNode *> order;
@@ -192,6 +209,7 @@ public:
     }
   }
 
+  // print all
   void all(void) {
     TNode *leftist = head->left;
     while (!leftist->leftNull) {
