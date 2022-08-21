@@ -129,15 +129,15 @@ If your data is already sorted, and you convert it into a BST, what will happen?
 
 The tree will become a link list, called skewed BST, which is very bad because your time complexity of Find, Insert, Delete will become $O(n)$ instead of $O(lgn)$.
 
-Therefore, if we want to make a tree always in a "best" condition, i.e., tree with lowest height, we have to adjust it whenever we make changes to it.
+Therefore, if we want to make a tree always in a "best" condition, i.e., tree with lowest height, we have to check if we need to make adjustment whenever we make changes to it.
 
-AVL Tree is a Data structure that helps us to reach this goal, which is s a self-balanced binary tree.
+AVL Tree is a Data structure that helps us to reach this goal, which is s a self-balancing binary tree.
 
 #### How it works
 
 After insertion and deletion(almost same as binary search tree), we check all nodes' left and right height difference on the "path", from root to the node we manipulate.
 
-If there is a node, which $|leftchild's\_heightDiff - rightchild's\_heightDiff| >= 2$, we can tell the height is inbalanced, then we can adjust it into balanced condition.
+If there is a node, which $|height(Lchild) - height(Rchild)| >= 2$, we can tell the height is inbalanced, then we can adjust it into balanced condition.
 
 ### Conditions
 
@@ -162,9 +162,9 @@ There are four conditions that we care about:
    A have Left child B with Right child C, $height(B) = |-1-0| = 1, height(A) = |1-(-1)| = 2$, we can do:
 
    1. Lift C up to become B's parent.
-   2. set B as C's Left child.
+   2. Set B as C's Left child.
    
-   You might noticed, this become a LL condition.
+   You might noticed, this leads to a LL condition.
 
 4. RL Condition:
 
