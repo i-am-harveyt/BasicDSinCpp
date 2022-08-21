@@ -6,9 +6,9 @@ Basic Data Structure and Algorithm in C++, try to practice my C++ programming sk
 
 Maybe one day I'll update the content in README, but I'll put more emphasis on writing code instead.
 
-### Currently uploaded\(04/25 2022\)
+### Currently uploaded\(08/21 2022\)
 
-Midterm week finally ended!\(Cheers\)
+Update Thread Binary Tree part, but not complete yet.
 
 [Maximum-Heap](#maximum_heap)
 
@@ -31,10 +31,14 @@ Midterm week finally ended!\(Cheers\)
 
 6. [Maximum Heap](#maximum_heap)
 
+7. [Thread Binary Tree](#thread_binary_tree)
+
 ### [Algorithm](#ag)
 
 1. [Selection Sort](#selection_sort)
+
 2. [Bubble Sort](#bubble_sort)
+
 3. [Binary Tree Sort](#binary_tree_sort)
 
 <a name="data_structure"></a>
@@ -80,6 +84,42 @@ Heap is a type of Complete Binary Tree, and it maintains it structure if we prop
 Add and deleteMax function's time complexity are both $O(logN)$, N = size of data, $logN$ is it's height. Due to it's complete Binary Tree property.
 
 06/27/2022 Update: I found that I accidentally print the null node at all() function, and I fixed it.
+
+<a name="thread_binary_tree"></a>
+### Thread Binary Tree
+
+Implemented Thread Binary Tree.
+
+#### Intro
+
+Note that, every time we build a binary tree, we waste n + 1 pointers points to null, what if we can make use of it?
+
+This is why Thread Binary Tree comes.
+
+#### Structure
+
+```
++---+
+|   |
++---+
+```
+
+We use two tags to present if the pointer is a null pointer.
+
+If ptr is not nullptr, then it points to left or right child.
+
+Otherwise, the right pointer points to the inorder successor, i.e. in inorder list, the next one.
+
+Whereas the left pointer points to the inorder predecessor, i.e. in inorder list, the previous one.
+
+The "head" and "tail" will points to null node, which means the "realy" null pointer. 
+
+In this way, we only waste two pointer as nullptr instead of n+1.
+
+<a name="avl-tree"></a>
+### AVL Tree
+
+It's lunch time, I might update later.
 
 <a name="ag"></a>
 ## Algorithm
