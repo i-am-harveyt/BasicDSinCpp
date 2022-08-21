@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+// Apart from a normal node, I add a height var to store node height
 class Node {
 public:
   int value, height;
@@ -13,7 +14,7 @@ public:
 
 class AVLT {
 public:
-  Node *nil, *dummy; // left of dummy is root;
+  Node *nil, *dummy; // left of dummy is root, to make a normalized condition
   int size;
   AVLT() {
     nil = new Node(-1, nullptr);
@@ -266,7 +267,7 @@ public:
     std::cout << std::endl;
   }
 
-  // Pre-order traversal
+  // Pre-order traversal, just for checking my implementation is right
   void preorder() {
     std::cout << "Preorder: ";
     Node *cur = dummy->left;
