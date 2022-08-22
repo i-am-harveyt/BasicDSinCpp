@@ -6,11 +6,9 @@ Basic Data Structure and Algorithm in C++, try to practice my C++ programming sk
 
 Maybe one day I'll update the content in README, but I'll put more emphasis on writing code instead.
 
-### Currently uploaded\(08/21 2022\)
+### Currently uploaded\(08/22 2022\)
 
-Update [Thread Binary Tree](#thread_binary_tree) part.
-
-Update [AVL Tree](#avl_tree) part.
+Update [Disjoint set](#disjoint_set) part.
 
 ## Table of Content
 
@@ -34,6 +32,8 @@ Update [AVL Tree](#avl_tree) part.
 7. [Thread Binary Tree](#thread_binary_tree)
 
 8. [AVL Tree](#avl_tree)
+
+9. [DisJoint Set](#disjoint_set)
 
 ### [Algorithm](#ag)
 
@@ -116,8 +116,6 @@ The "head" and "tail" will points to null node, which means the "really" null po
 
 In this way, we only waste two pointer as nullptr instead of n+1.
 
-However, I found I didn't implement well, I'll rewrite this in couple days, I hope so.
-
 <a name="avl_tree"></a>
 ### AVL Tree
 
@@ -178,6 +176,33 @@ There are four conditions that we care about:
    You might noticed, this become a RR condition.
 
 After handling these conditions, we can tell all L&R height difference are either 0 or 1, therefore, the tree's structure must remains an ideal condition. Which means, Find, Insert, Delete's time complexity remains about $O(lgn)$.
+
+<a name="disjoint_set"></a>
+### Disjoint set
+
+If we want to check connected components, what might we do? The intuitive one is to lined them.
+
+Disjoint set provide us a way to do things like this.
+
+#### Structure
+
+We use an array to store them, of course we can use a HashMap as well, the idea is basically identical.
+
+In the array, index represents node's data, value of a node represents parent's index, if the node is root, value stores the size in negative number of the set.
+
+#### Functions
+
+Disjoint set basically provides two actions:
+
+1. Union(A, B): To combine two sets: A & B.
+2. Find(A): To find the root of set that A in.
+
+However, think of the condition that we've mentioned in discussion of AVL Tree... the manipulation toward points building a tree may leads to a skewd tree, right? We want to avoid that condition too.
+
+To prevent this tree from becoming a skewd tree, instead of arbitrary -- ignore that height and size matter -- Union two sets and just Find root along the long long path. We can make adjustment to them:
+
+1. Union(A, B): Consider that height and size matter, we can determine height and size first, then think of which root becomes new root. Therefore, the height or size of the tree may grow slower.
+2. Find(A): Do an action called Path compression, each time we to the Find method, we update the on-path-node's parent by root. In this way, distence between these nodes and root becomes 1.
 
 
 <a name="ag"></a>
