@@ -375,3 +375,6 @@ The thought is that, we can use a rule to create a Binary Search Tree first \-\-
 After that, we just use a in-order traversal run through them, and we'll get a sorted sequence.
 
 Note: In-order traversal reads a tree in "left sub-tree -> center node -> right sub-tree" way, therefore, smaller one print first.
+
+
+Author: Harvey Tung
