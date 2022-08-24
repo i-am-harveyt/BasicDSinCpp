@@ -244,7 +244,7 @@ Let's do some adjustment toward basic min or max heap:
             2. Put child and tmp into right place
             3. Do step3 again with grandchlid index treated as root.
             
-   Deletion is quite complicated, it is recommend to read this part and my code at same time.
+   Deletion is quite complicated, it is recommend to read this part and my code at the same time.
 
 <a name="ag"></a>
 ## Algorithm
