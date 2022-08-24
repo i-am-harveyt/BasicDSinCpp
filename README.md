@@ -20,9 +20,9 @@ Update [Min Max Heap](#min_max_heap) part.
 
 3. [BinaryTree with Pre/In/Post-order traversal](#binary_tree_traversal)
 
-4. [XOR Linked List](#xor_linked_list)
+4. [Doubly Linked List](#doubly_linked_list)
 
-5. [Doubly Linked List](#doubly_linked_list)
+5. [XOR Linked List](#xor_linked_list)
 
 6. [Maximum Heap](#maximum_heap)
 
@@ -89,17 +89,96 @@ Stack and Queue can implement each other, however I didn't put this DS design in
 <a name="binary_tree_traversal"></a>
 ### BinaryTree with Pre/In/Post-order traversal
 
-Implement BT, using Linked List, and three traversals. The tree will be created automatically and \(maybe\) numarical randomly.
+To travel through all data stored in tree. There are mainly four ways, mainly differs in access sequence:
 
-<a name="xor_linked_list"></a>
-### XOR Linked List
+1. Pre-order: root -> left -> right.
+2. In-order: left -> root -> right. If the tree is a Binary Search Tree, the output will be a sorted sequence.
+3. Post-order: left -> right -> root.
+4. Level-order: from root to leaf and from left to right.
 
-Implement XOR Linked List, I like this Data Structure persoanlly, 'cause I think this is a great use of XOR.
+The traversal way above mostly mainly implemented by the use of [Stack](#stack), while the last one is by the use of [Queue](#queue).
+
+Implement them using recursive way is quite intuitive, while in iterative way is a little bit more complicated.
+
+Generally, the thought I come up with is something below:
+
+```
+while stack is not empty or current Node is not null:
+   while current node is not null:
+     stack.push(current node)
+     update current by current's left child
+
+   stack.pop()
+
+   update current by current's right child
+```
+
+But between these three order,the logic of push, pop will be a little bit defferent. In this repo, I implement them in recursive way. While I wrote them iterative way in [MyLeetCodePractice](https://github.com/i-am-harveyt/MyLeetCodePractice) repo, but if you want to find them out, you may refer to LeetCode problem ID, which is a little bit time-wasting. And you may come up with those ideas before you found it, haha!
+
+The thought of level-order implementation is:
+
+```
+while queue is not empty:
+   size = queue.size()
+   while size > 0 :
+      queue.push(queue.front.leftChild) if needed
+      queue.push(queue.front.rightChild) if needed
+      queue.pop()
+      size--
+```
+
+this will run a "from root to leaf and from left to rifght way".
+
+I also implement this in MyLeetCodePractice repo.
 
 <a name="doubly_linked_list"></a>
 ### Doubly Linked List
 
-Implement Doubly Linked List, use two pionter to save the address of previous and next Node.
+Structure:
+
+```
++------+-----+------+
+| prev | val | next |
++------+-----+------+
+```
+
+Differs from Singly link list, we store two pointers that respectively points to previous and next node.
+
+Therefore, we can access previous and next node as we want.
+
+Though it makes access convenient, however, it also sometimes make maintainance of pointers not very intuitive.
+
+<a name="xor_linked_list"></a>
+### XOR Linked List
+
+#### Introduction
+
+When using a normal singly linked list, you only points to next or prev which is really a little bit inconvenient. 
+
+However, using a vanilla doubly linked list, you have to maintain two pointers, which sometimes make mantainance complicated.
+
+I personally think that XOR link list is a great way to combine two pointers into one, with the use of XOR operation.
+
+#### Basic XOR property
+
+Basic:
+
+```
++---+---+---+
+| A | B | O |
++---+---+---+
+| T | T | F |
+| T | F | T |
+| F | T | T |
+| F | F | F |
++---+---+---+
+```
+
+So what can we do with this? 
+
+When it comes to (A XOR B), the property is $$(A \oplus B) \oplus A = B$$
+
+Therefore, we can only maintain a ptr = $prev \oplus next$. Getting previous/next node using our tamporary stored next/previous node, and do XOR operation with ptr, we can get what we're looking for.
 
 <a name="maximum_heap"></a>
 ### Maximum Heap
