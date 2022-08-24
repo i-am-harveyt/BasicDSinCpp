@@ -2,9 +2,7 @@
 
 ## Intro
 
-Basic Data Structure and Algorithm in C++, try to practice my C++ programming skill and implement those I've learned.
-
-Maybe one day I'll update the content in README, but I'll put more emphasis on writing code instead.
+Basic Data Structure and Algorithm in C++, practice my C++ programming skill and implement those thing I've learned.
 
 ### Currently uploaded\(08/24. 2022\)
 
