@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include <ratio>
 #include <vector>
 
 using namespace std;
@@ -117,7 +118,57 @@ public:
      * DelMin(int rootIndex)->void
      * Delete Minimum data from MinMaxHeap
      */
-    void DelMin(int root) {
+    void delMin() {
+        int x = data[data.size()-1];
+        data.pop_back();
+        delHelper(0, x);
+    }
+
+    /*
+     * delHelper(int root)
+     * A helper function to delMin
+     */
+    void delHelper(int root, int x) {
+        int size = data.size();
+        if (size <= root * 2 + 1) {
+            data[root] = x;
+            return;
+        }
+        // check min is in children or grandchildren
+        int delegate[] = {
+            root * 2 + 1, root * 2 + 2, 
+            root * 4 + 2, root * 4 + 3, 
+            root * 4 + 4, root * 4 + 5};
+        int min = data[root * 2 + 1], ind = root * 2 + 1;
+        for (int i = 0 ; i < 6 ; i++) {
+            if (delegate[i] >= size)
+                break;
+            if (data[delegate[i]] < min) {
+                min = data[delegate[i]];
+                ind = delegate[i];
+            }
+        }
+        if (ind <= root*2+2) { // is in child
+            if (x < min) {
+                data[root] = x;
+            } else {
+                data[root] = min;
+                data[ind] = x;
+            }
+            return;
+        }
+        if (x <= min) {
+            data[root] = x;
+        } else {
+            data[root] = min;
+            int p = getParent(ind);
+            if (x > data[p]) {
+                int tmp = x;
+                x = data[p];
+                data[p] = tmp;
+            }
+            delHelper(ind, x);
+        }
     }
 
     void all(void) {
@@ -142,7 +193,11 @@ int main(void) {
     h.insert(5);
     h.insert(3);
     h.insert(40);
-    cout << "After: ";
+    cout << "After insertions: ";
+    h.all();
+    h.delMin();
+    h.delMin();
+    cout << "After deletion: ";
     h.all();
     return 0;
 }
