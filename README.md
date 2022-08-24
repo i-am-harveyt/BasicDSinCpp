@@ -6,7 +6,7 @@ Basic Data Structure and Algorithm in C++, try to practice my C++ programming sk
 
 Maybe one day I'll update the content in README, but I'll put more emphasis on writing code instead.
 
-### Currently uploaded\(08/24 2022\)
+### Currently uploaded\(08/24. 2022\)
 
 Update [Min Max Heap](#min_max_heap) part.
 
@@ -16,10 +16,7 @@ Update [Min Max Heap](#min_max_heap) part.
 
 1. [Stack](#stack)
 
-2. Queue
-
-   1. [Array](#queue_in_array)
-   2. [Linked List](#queue_in_linked_list)
+2. [Queue](#queue)
 
 3. [BinaryTree with Pre/In/Post-order traversal](#binary_tree_traversal)
 
@@ -51,17 +48,43 @@ Update [Min Max Heap](#min_max_heap) part.
 <a name="stack"></a>
 ### Stack
 
-Implement Stack using Array. Also implemented push, pop, isEmpty, isFull functions.
+#### Introduction
 
-<a name="queue_in_array"></a>
-### Queue implemented by Array
+Stack is one of the most basic Data Structure. Which main property is LIFO(Last In First Out).
 
-Implement Queue using Array. Also implemented enqueue and dequeue functions. The emptiness and fullness of queue will be notified when calling these functions.
+The use of Stack is quite common. For example, Recursion is one of Stack application, and Depth-First-Search is also well-known one, we'll also cover this topic later.
 
-<a name="queue_in_linked_list"></a>
-### Queue implemented by Linked List
+In our daily life, think of taking elevator, what will happen if an elevator overload? Generally, the last one who enter will go out.
 
-The introduction is almost as same as [Queue implemented by Array](#queue_in_array)
+#### Implementation
+
+To implement stack, we can use array or link list. But mainly, we support:
+
+1. push(x): to push x into top of the stack.
+2. pop(void): to remove x from top of the stack.
+3. top(void): to access the top of the stack.
+
+And make sure that they can be done in O(1) time.
+
+<a name="queue"></a>
+### Queue
+
+Compare to [Stack](#stack), Queue is a FIFO(First In First Out) data structure.
+
+You can think of waiting in line, and some sequential condition, they based on FIFO idea as well.
+
+In DS and Algorithm, Bredth-First-Search(BFS) or Level order traversal is the apllication of Queue. We may cover BFS later, but I may not discuss Level-order traversal here.
+
+#### Implementation
+
+We can also implement it by array or linkedlist. And I split into two files to store my implementation. And they basically support:
+
+1. enqueue(x): push x into queue from rear(back of the queue).
+2. dequeue(): remove the element in front of the queue.
+
+Both of them work in O(1) time.
+
+Stack and Queue can implement each other, however I didn't put this DS design into this repo.
 
 <a name="binary_tree_traversal"></a>
 ### BinaryTree with Pre/In/Post-order traversal
