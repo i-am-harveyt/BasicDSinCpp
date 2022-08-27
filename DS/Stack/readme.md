@@ -1,6 +1,6 @@
-### Stack
+# Stack
 
-#### Introduction
+## Introduction
 
 Stack is one of the most basic Data Structure. Which main property is LIFO(Last In First Out).
 
@@ -8,7 +8,7 @@ The use of Stack is quite common. For example, Recursion is one of Stack applica
 
 In our daily life, think of taking elevator, what will happen if an elevator overload? Generally, the last one who enter will go out.
 
-#### Implementation
+## Implementation
 
 To implement stack, we can use array or link list. But mainly, we support:
 

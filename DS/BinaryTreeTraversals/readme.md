@@ -1,4 +1,4 @@
-### BinaryTree with Pre/In/Post-order traversal
+# BinaryTree with Pre/In/Post-order traversal
 
 To travel through all data stored in tree. There are mainly four ways, mainly differs in access sequence:
 

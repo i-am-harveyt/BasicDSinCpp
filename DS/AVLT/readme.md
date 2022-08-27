@@ -1,6 +1,6 @@
-### AVL Tree
+# AVL Tree
 
-#### Introduction to AVL Tree
+## Introduction to AVL Tree
 
 Think of the condition.
 
@@ -12,13 +12,13 @@ Therefore, if we want to make a tree always in a "best" condition, i.e., tree wi
 
 AVL Tree is a Data structure that helps us to reach this goal, which is s a self-balancing binary tree.
 
-#### How it works
+## How it works
 
 After insertion and deletion(almost same as binary search tree), we check all nodes' left and right height difference on the "path", from root to the node we manipulate.
 
 If there is a node, which $|height(Lchild) - height(Rchild)| >= 2$, we can tell the height is inbalanced, then we can adjust it into balanced condition.
 
-### Conditions
+## Conditions
 
 There are four conditions that we care about:
 

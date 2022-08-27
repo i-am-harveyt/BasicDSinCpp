@@ -1,4 +1,4 @@
-### Thread Binary Tree
+# Thread Binary Tree
 
 Implemented Thread Binary Tree.
 
@@ -8,7 +8,7 @@ Note that, every time we build a binary tree, we waste n + 1 pointers points to 
 
 This is why Thread Binary Tree comes.
 
-#### Structure
+## Structure
 
 ```
 +-------------------------------------------------------+

@@ -1,4 +1,4 @@
-### Selection Sort
+# Selection Sort
 
 The basic sorting algorithm, which (might be) the most intuitive one.
 

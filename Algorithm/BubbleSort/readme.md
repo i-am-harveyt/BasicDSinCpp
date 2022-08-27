@@ -1,4 +1,4 @@
-### Bubble Sort
+# Bubble Sort
 
 Another basic algorithm, while I  personally think it is not as intuitive as [Selection Sort](#selection_sort).
 

@@ -1,4 +1,4 @@
-### Binary Tree Sort
+# Binary Tree Sort
 
 Also quite basic one, in my opinion.
 

@@ -1,16 +1,16 @@
-### Disjoint set
+# Disjoint set
 
 If we want to check connected components, what might we do? The intuitive one is to lined them.
 
 Disjoint set provide us a way to do things like this.
 
-#### Structure
+## Structure
 
 We use an array to store them, of course we can use a HashMap as well, the idea is basically identical.
 
 In the array, index represents node's data, value of a node represents parent's index, if the node is root, value stores the size in negative number of the set.
 
-#### Functions
+## Functions
 
 Disjoint set basically provides two actions:
 

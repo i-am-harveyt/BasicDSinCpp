@@ -1,23 +1,23 @@
-### Maximum Heap
+# Maximum Heap
 
-#### Introduction
+## Introduction
 
 When it comes to frequently access the minimum and maximum element inside a binary tree, it would be quite inefficient since we spend O(lgn) time for Binary Search Tree and O(n) time for Binary Tree when for doing this.
 
 Heap is a data structure that can solve this odd condition. Because it is designed as placing the maximum/minimum in root, therefore we can spend only O(1) time to access it.
 
-#### Basic Property
+## Basic Property
 
 1. Heap is a complete binary tree.
 2. For each subtree, root is the biggest among it's left and right child. Which means each subtree is also a heap
 
-#### Function
+## Function
 
 1. insert(x): Insert x into heap, and adjust x into it's proper place.
 2. getMax(void): return maximum, if it's a minimum heap, return minimum.
 3. delete(void): delete root(maximum/minimum) in this heap, and fix the structure.
 
-#### Implementation
+## Implementation
 
 Since Heap is a complete binary tree, we prefer using array to implement it.
 

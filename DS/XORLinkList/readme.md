@@ -1,6 +1,6 @@
-### XOR Linked List
+# XOR Linked List
 
-#### Introduction
+## Introduction
 
 When using a normal singly linked list, you only points to next or prev which is really a little bit inconvenient. 
 
@@ -8,7 +8,7 @@ However, using a vanilla doubly linked list, you have to maintain two pointers, 
 
 I personally think that XOR link list is a great way to combine two pointers into one, with the use of XOR operation.
 
-#### Basic XOR property
+## Basic XOR property
 
 Basic:
 

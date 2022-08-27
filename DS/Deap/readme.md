@@ -1,10 +1,10 @@
-### Deap
+# Deap
 
 Deap is also a vriation of heap, which also provide an easy way to access minimum and maximum element.
 
 Differs from Min-Max-Heap, Deap maintain Min/Max Heap property by maintaining two heaps, respectively in root's left and right subtree. And Deap does not store data in root.
 
-#### Functions
+## Functions
 
 1. getMin(void): Return Minimum element from Deap, i.e., data[1].
 2. getMax(void): Return Maximum element from Deap, i.e., data[2].

@@ -1,8 +1,8 @@
-### Min Max Heap
+# Min Max Heap
 
 Have you ever thought, when we use Min Heap or Max Heap, we can only access the min or max element in O(1) time, when in comes to access another, we have to use O(n) time, which is sometimes a little bit not efficient enough? Min Max Heap can help you!
 
-#### Basic Thought
+## Basic Thought
 
 Let's do some adjustment toward basic min or max heap:
 
@@ -14,7 +14,7 @@ Let's do some adjustment toward basic min or max heap:
 
 4. However, this means we have to consider the maintainence of min and max heap, which I'll discuss later.
 
-#### Functions
+## Functions
 
 1. getMin(void): access root.
 2. getMax(void): access root's left or right child, if root has no child, which means this tree only have root node, access root.
