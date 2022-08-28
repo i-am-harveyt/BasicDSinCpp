@@ -6,7 +6,7 @@ Basic Data Structure and Algorithm in C++, practice my C++ programming skill and
 
 ### Currently uploaded\(08/24. 2022\)
 
-Update [Deap](./DS/Deap) part.
+Update [Extended Binary Tree](./DS/ExtendedBT) part.
 
 ## Table of Content
 
@@ -33,6 +33,10 @@ Update [Deap](./DS/Deap) part.
 10. [Min Max Heap](./DS/MinMaxHeap)
 
 11. [Deap](./DS/Deap)
+
+12. [SMMH](./DS/SMMH)
+
+13. [Extended Binary Tree](./DS/ExtendedBT)
 
 ### Algorithm
 
