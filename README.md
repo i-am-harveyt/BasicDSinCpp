@@ -38,11 +38,15 @@ Update [Extended Binary Tree](./DS/ExtendedBT) part.
 
 13. [Extended Binary Tree](./DS/ExtendedBT)
 
+14. [Red-Black Tree](/DS/RBTree)
+
 ### Algorithm
 
 1. [Selection Sort](./Algorithm/SelectionSort)
 
-2. [Bubble Sort](./Algorithm/BubbleSort)
+2. [Insertion Sort](./Algorithm/InsertionSort)
+
+3. [Bubble Sort](./Algorithm/BubbleSort)
 
 3. [Binary Tree Sort](./Algorithm/BinarySort)
 
