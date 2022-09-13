@@ -50,5 +50,6 @@ Update [Extended Binary Tree](./DS/ExtendedBT) part.
 
 3. [Binary Tree Sort](./Algorithm/BinarySort)
 
-4. [Binary Tree Sort](./Algorithm/QuickSort)
+4. [Quick Sort](./Algorithm/QuickSort)
+
 Author: Harvey Tung
