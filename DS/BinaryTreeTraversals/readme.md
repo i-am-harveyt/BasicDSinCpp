@@ -7,7 +7,7 @@ To travel through all data stored in tree. There are mainly four ways, mainly di
 3. Post-order: left -> right -> root.
 4. Level-order: from root to leaf and from left to right.
 
-The traversal way above mostly mainly implemented by the use of [Stack](#stack), while the last one is by the use of [Queue](#queue).
+The traversal way above mostly mainly implemented by the use of [Stack](DS/Stack), while the last one is by the use of [Queue](/DS/Queue/).
 
 Implement them using recursive way is quite intuitive, while in iterative way is a little bit more complicated.
 

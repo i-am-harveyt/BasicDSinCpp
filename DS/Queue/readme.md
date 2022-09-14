@@ -1,6 +1,6 @@
 # Queue
 
-Compare to [Stack](#stack), Queue is a FIFO(First In First Out) data structure.
+Compare to [Stack](/DS/Stack/), Queue is a FIFO(First In First Out) data structure.
 
 You can think of waiting in line, and some sequential condition, they based on FIFO idea as well.
 
