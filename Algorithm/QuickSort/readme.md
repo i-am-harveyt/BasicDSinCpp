@@ -1,5 +1,10 @@
 # Quick Sort
 
+## Update
+
+I write two ways of implementation.
+The logic is different, but they're both Quick Sort.
+
 ## Intro
 
 Quick Sort is a advanced sorting method, which uses the "divide and conquer" strategy. 
