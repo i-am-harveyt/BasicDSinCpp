@@ -17,6 +17,8 @@ Basic Data Structure and Algorithm in C++, practice my C++ programming skill and
 
 Update [Merge Sort](./Algorithm/MergeSort) part.
 
+Update [Radix Sort](./Algorithm/RadixSort) part.
+
 ## Table of Content
 
 ### Data Structure
@@ -62,5 +64,7 @@ Update [Merge Sort](./Algorithm/MergeSort) part.
 4. [Quick Sort](./Algorithm/QuickSort)
 
 5. [Merge Sort](./Algorithm/MergeSort)
+
+6. [Radix Sort](./Algorithm/RadixSort)
 
 Author: Harvey Tung
