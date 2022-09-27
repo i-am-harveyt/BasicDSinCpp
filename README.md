@@ -3,7 +3,7 @@
 <!--toc:start-->
 - [Basic Data Structure and some Algorithms in CPP](#basic-data-structure-and-some-algorithms-in-cpp)
   - [Intro](#intro)
-    - [Currently uploaded\(08/24. 2022\)](#currently-uploaded0824-2022)
+    - [Currently uploaded](#currently-uploaded)
   - [Table of Content](#table-of-content)
     - [Data Structure](#data-structure)
     - [Algorithm](#algorithm)
@@ -13,9 +13,9 @@
 
 Basic Data Structure and Algorithm in C++, practice my C++ programming skill and implement those thing I've learned.
 
-### Currently uploaded\(08/24. 2022\)
+### Currently uploaded
 
-Update [Extended Binary Tree](./DS/ExtendedBT) part.
+Update [Merge Sort](./Algorithm/MergeSort) part.
 
 ## Table of Content
 
@@ -60,5 +60,7 @@ Update [Extended Binary Tree](./DS/ExtendedBT) part.
 3. [Binary Tree Sort](./Algorithm/BinarySort)
 
 4. [Quick Sort](./Algorithm/QuickSort)
+
+5. [Merge Sort](./Algorithm/MergeSort)
 
 Author: Harvey Tung
