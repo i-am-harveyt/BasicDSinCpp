@@ -7,7 +7,7 @@
   - [Table of Content](#table-of-content)
     - [Data Structure](#data-structure)
     - [Algorithm](#algorithm)
-<!--toc:end-->
+    <!--toc:end-->
 
 ## Intro
 
@@ -15,9 +15,7 @@ Basic Data Structure and Algorithm in C++, practice my C++ programming skill and
 
 ### Currently uploaded
 
-Update [Merge Sort](./Algorithm/MergeSort) part.
-
-Update [Radix Sort](./Algorithm/RadixSort) part.
+Update [Topological Sort](./Algorithm/TopologicalSort) part.
 
 ## Table of Content
 
@@ -59,12 +57,14 @@ Update [Radix Sort](./Algorithm/RadixSort) part.
 
 3. [Bubble Sort](./Algorithm/BubbleSort)
 
-3. [Binary Tree Sort](./Algorithm/BinarySort)
+4. [Binary Tree Sort](./Algorithm/BinarySort)
 
-4. [Quick Sort](./Algorithm/QuickSort)
+5. [Quick Sort](./Algorithm/QuickSort)
 
-5. [Merge Sort](./Algorithm/MergeSort)
+6. [Merge Sort](./Algorithm/MergeSort)
 
-6. [Radix Sort](./Algorithm/RadixSort)
+7. [Radix Sort](./Algorithm/RadixSort)
+
+8. [Topological Sort](./Algorithm/TopologicalSort)
 
 Author: Harvey Tung
