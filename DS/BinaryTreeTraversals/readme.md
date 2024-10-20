@@ -2,10 +2,10 @@
 
 To travel through all data stored in tree. There are mainly four ways, mainly differs in access sequence:
 
-1. Pre-order: root -> left -> right.
-2. In-order: left -> root -> right. If the tree is a Binary Search Tree, the output will be a sorted sequence.
-3. Post-order: left -> right -> root.
-4. Level-order: from root to leaf and from left to right.
+1. Pre-order: **root** -> left -> right.
+2. In-order: left -> **root** -> right. If the tree is a Binary Search Tree, the output will be a sorted sequence.
+3. Post-order: left -> right -> **root**.
+4. Level-order: from root to leaf, and in each level, from left to right.
 
 The traversal way above mostly mainly implemented by the use of [Stack](DS/Stack), while the last one is by the use of [Queue](/DS/Queue/).
 
